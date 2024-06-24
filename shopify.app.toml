@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://democracy-usps-own-governmental.trycloudflare.com"
+application_url = "https://distributions-youth-fold-dale.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://democracy-usps-own-governmental.trycloudflare.com/auth/callback",
-  "https://democracy-usps-own-governmental.trycloudflare.com/auth/shopify/callback",
-  "https://democracy-usps-own-governmental.trycloudflare.com/api/auth/callback"
+  "https://distributions-youth-fold-dale.trycloudflare.com/auth/callback",
+  "https://distributions-youth-fold-dale.trycloudflare.com/auth/shopify/callback",
+  "https://distributions-youth-fold-dale.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
