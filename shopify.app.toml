@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://distributions-youth-fold-dale.trycloudflare.com"
+application_url = "https://workers-civilian-richards-selective.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://distributions-youth-fold-dale.trycloudflare.com/auth/callback",
-  "https://distributions-youth-fold-dale.trycloudflare.com/auth/shopify/callback",
-  "https://distributions-youth-fold-dale.trycloudflare.com/api/auth/callback"
+  "https://workers-civilian-richards-selective.trycloudflare.com/auth/callback",
+  "https://workers-civilian-richards-selective.trycloudflare.com/auth/shopify/callback",
+  "https://workers-civilian-richards-selective.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
