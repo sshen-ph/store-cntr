@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://playing-mel-struggle-violent.trycloudflare.com"
+application_url = "https://satisfied-keep-rentals-purposes.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://playing-mel-struggle-violent.trycloudflare.com/auth/callback",
-  "https://playing-mel-struggle-violent.trycloudflare.com/auth/shopify/callback",
-  "https://playing-mel-struggle-violent.trycloudflare.com/api/auth/callback"
+  "https://satisfied-keep-rentals-purposes.trycloudflare.com/auth/callback",
+  "https://satisfied-keep-rentals-purposes.trycloudflare.com/auth/shopify/callback",
+  "https://satisfied-keep-rentals-purposes.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
