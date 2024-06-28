@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://store-cntr.onrender.com"
+application_url = "https://graduation-accept-physical-net.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://store-cntr.onrender.com/auth/callback",
-  "https://store-cntr.onrender.com/auth/shopify/callback",
-  "https://store-cntr.onrender.com/api/auth/callback"
+  "https://graduation-accept-physical-net.trycloudflare.com/auth/callback",
+  "https://graduation-accept-physical-net.trycloudflare.com/auth/shopify/callback",
+  "https://graduation-accept-physical-net.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
