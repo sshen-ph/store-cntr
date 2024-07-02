@@ -1,0 +1,47 @@
+<script src="https://ui.powerreviews.com/stable/4.1/ui.js" async></script>
+<div id="pr-write"></div>
+<script>
+  window.pwr = window.pwr || function () {
+    (pwr.q = pwr.q || []).push(arguments); 
+  };
+   pwr("render", {
+    api_key: '{{ section.settings.api_key }}',
+    locale: '{{ section.settings.locale }}',
+    merchant_group_id: '{{ section.settings.group_id }}',
+    merchant_id: '{{ section.settings.merchant_id }}',
+    on_submit:function(config, data){
+         window.scrollTo(0,0); 
+     },
+    components: {
+      Write: 'pr-write'
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "PWR WAR",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "API Key",
+    },
+    {
+      "type": "text",
+      "id": "locale",
+      "label": "Locale",
+    },
+    {
+      "type": "text",
+      "id": "group_id",
+      "label": "Group ID",
+    },
+    {
+      "type": "text",
+      "id": "merchant_id",
+      "label": "Merchant ID",
+    }
+  ]
+}
+{% endschema %}
