@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://graduation-accept-physical-net.trycloudflare.com"
+application_url = "https://4.153.165.195/"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products,write_pixels,read_customer_events"
+scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://graduation-accept-physical-net.trycloudflare.com/auth/callback",
-  "https://graduation-accept-physical-net.trycloudflare.com/auth/shopify/callback",
-  "https://graduation-accept-physical-net.trycloudflare.com/api/auth/callback"
+  "https://4.153.165.195/auth/callback",
+  "https://4.153.165.195/auth/shopify/callback",
+  "https://4.153.165.195/api/auth/callback"
 ]
 
 [webhooks]

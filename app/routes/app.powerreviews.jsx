@@ -10,27 +10,14 @@ import {
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 
-export default function AdditionalPage() {
+export default function PowerReviewsPage() {
   return (
     <Page>
-      <TitleBar title="Additional page" />
+      <TitleBar title="PowerReviews" />
       <Layout>
         <Layout.Section>
           <Card>
             <BlockStack gap="300">
-              <Text as="p" variant="bodyMd">
-                The app template comes with an additional page which
-                demonstrates how to create multiple pages within app navigation
-                using{" "}
-                <Link
-                  url="https://shopify.dev/docs/apps/tools/app-bridge"
-                  target="_blank"
-                  removeUnderline
-                >
-                  App Bridge
-                </Link>
-                .
-              </Text>
               <Text as="p" variant="bodyMd">
                 To create your own page and have it show up in the app
                 navigation, add a page inside <Code>app/routes</Code>, and a
