@@ -1,0 +1,55 @@
+<!-- start_collection_js_code -->
+<script src="https://ui.powerreviews.com/stable/4.1/ui.js" async></script> 
+<script>
+  window.pwr = window.pwr || function () {
+    (pwr.q = pwr.q || []).push(arguments); 
+  };
+  pwr('render', [
+    {%- for product in collection.products -%}
+      {
+        ENABLE_CLIENT_SIDE_STRUCTURED_DATA: false,
+        api_key: '{{ block.settings.api_key }}',
+        locale: '{{ block.settings.locale }}',
+        merchant_group_id: '{{ block.settings.merchant_group_id }}',
+        merchant_id: '{{ block.settings.merchant_id }}',
+        page_id: '{{ product.handle }}',
+        components: {
+          CategorySnippet: 'snippet-{{ product.handle }}'
+        }
+      } {% if forloop.last == false %}, {% endif %}
+    {% endfor %}
+  ]);
+</script>
+<!-- end_collection_js_code -->
+{% schema %}
+{
+  "name": "PWR-collection",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "API Key",
+      "default": "Enter text here"
+    },
+    {
+      "type": "text",
+      "id": "locale",
+      "label": "Locale",
+      "default": "en_US"
+    },
+    {
+      "type": "text",
+      "id": "merchant_group_id",
+      "label": "Merchant Group ID",
+      "default": "Enter text here"
+    },
+    {
+      "type": "text",
+      "id": "merchant_id",
+      "label": "Merchant ID",
+      "default": "Enter text here"
+    }
+  ]
+}
+{% endschema %}

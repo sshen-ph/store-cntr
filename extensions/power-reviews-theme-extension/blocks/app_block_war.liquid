@@ -2,15 +2,15 @@
 <div id="pr-write"></div>
 <script>
   window.pwr = window.pwr || function () {
-    (pwr.q = pwr.q || []).push(arguments); 
+    (pwr.q = pwr.q || []).push(arguments);
   };
    pwr("render", {
-    api_key: '{{ section.settings.api_key }}',
-    locale: '{{ section.settings.locale }}',
-    merchant_group_id: '{{ section.settings.group_id }}',
-    merchant_id: '{{ section.settings.merchant_id }}',
+    api_key: '{{ block.settings.api_key }}',
+    locale: '{{ block.settings.locale }}',
+    merchant_group_id: '{{ block.settings.merchant_group_id }}',
+    merchant_id: '{{ block.settings.merchant_id }}',
     on_submit:function(config, data){
-         window.scrollTo(0,0); 
+         window.scrollTo(0,0);
      },
     components: {
       Write: 'pr-write'
@@ -19,28 +19,32 @@
 </script>
 {% schema %}
 {
-  "name": "PWR WAR",
+  "name": "PWR-WAR",
   "target": "section",
   "settings": [
     {
       "type": "text",
       "id": "api_key",
       "label": "API Key",
+      "default": "Enter text here"
     },
     {
       "type": "text",
       "id": "locale",
       "label": "Locale",
+      "default": "en_US"
     },
     {
       "type": "text",
-      "id": "group_id",
-      "label": "Group ID",
+      "id": "merchant_group_id",
+      "label": "Merchant Group ID",
+      "default": "Enter text here"
     },
     {
       "type": "text",
       "id": "merchant_id",
       "label": "Merchant ID",
+      "default": "Enter text here"
     }
   ]
 }

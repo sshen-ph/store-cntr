@@ -3,7 +3,7 @@
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
 name = "store-cntr"
 handle = "store-cntr"
-application_url = "https://4.153.165.195/"
+application_url = "https://stability-val-icons-bidding.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "read_customer_events,write_pixels,write_products"
 
 [auth]
 redirect_urls = [
-  "https://4.153.165.195/auth/callback",
-  "https://4.153.165.195/auth/shopify/callback",
-  "https://4.153.165.195/api/auth/callback"
+  "https://stability-val-icons-bidding.trycloudflare.com/auth/callback",
+  "https://stability-val-icons-bidding.trycloudflare.com/auth/shopify/callback",
+  "https://stability-val-icons-bidding.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
