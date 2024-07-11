@@ -27,7 +27,7 @@
   product: {
   	name: "{{ product.title | replace: "+", " " }}",
   	url: "https://<STORE>.myshopify.com{{ product.url }}",
-  	image_url: "https:{{ product.featured_image | product_img_url: "large" }}",
+  	image_url: "https:{{ product.featured_image | image_url: "large" }}",
   	description: "{{ product.description | strip_html | strip_newlines | replace: "%0A", "%20" | replace: '"', '%27' | escape }}",
   	category_name: {% if product.type != '' %}"{{ product.type }}"{% else %} "Default" {% endif %},
   	upc: "{{ product.barcode }}",
