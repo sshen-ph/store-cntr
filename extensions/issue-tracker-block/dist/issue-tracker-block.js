@@ -18439,7 +18439,7 @@
     }
   });
 
-  // extensions/issue-tracker-block/src/BlockExtension.jsx
+  // extensions/issue-tracker-block/src/BlockExtension-connect.jsx
   var import_react18 = __toESM(require_react());
 
   // node_modules/@remote-ui/rpc/build/esm/memory.mjs
@@ -19580,13 +19580,13 @@
     });
   }
 
-  // extensions/issue-tracker-block/src/BlockExtension.jsx
+  // extensions/issue-tracker-block/src/BlockExtension-connect.jsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var TARGET = "admin.product-details.block.render";
-  var BlockExtension_default = reactExtension(TARGET, () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
+  var BlockExtension_connect_default = reactExtension(TARGET, () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
   var PAGE_SIZE = 3;
   function App() {
-    const { data, i18n } = useApi(TARGET);
+    const { navigation, data, i18n } = useApi(TARGET);
     const [loading, setLoading] = (0, import_react18.useState)(true);
     const [initialValues, setInitialValues] = (0, import_react18.useState)([]);
     const [issues, setIssues] = (0, import_react18.useState)([]);
@@ -19611,7 +19611,7 @@
           }
         });
       })();
-    }, [productId]);
+    }, []);
     const paginatedIssues = (0, import_react18.useMemo)(() => {
       if (issuesCount <= PAGE_SIZE) {
         return issues;
@@ -19620,7 +19620,7 @@
         (currentPage - 1) * PAGE_SIZE,
         currentPage * PAGE_SIZE
       );
-    }, [issuesCount, issues, currentPage]);
+    }, [issues, currentPage]);
     const handleChange = (id, value) => __async(this, null, function* () {
       setIssues((currentIssues) => {
         const newIssues = [...currentIssues];
@@ -19644,96 +19644,131 @@
     });
     const onReset = () => {
     };
-    return loading ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(InlineStack2, { blockAlignment: "center", inlineAlignment: "center", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ProgressIndicator2, { size: "large-100" }) }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+    return loading ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(InlineStack2, { blockAlignment: "center", inlineAlignment: "center", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ProgressIndicator2, { size: "large-100" }) }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       AdminBlock2,
       {
         title: i18n.translate("name"),
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: "Issues" }),
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Form2, { id: `issues-form`, onSubmit, onReset, children: issues.length ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
-            paginatedIssues.map(
-              ({ id, title, description, completed }, index) => {
-                return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
-                  index > 0 && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider2, {}),
-                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { padding: "base small", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
-                    InlineStack2,
-                    {
-                      blockAlignment: "center",
-                      inlineSize: "100%",
-                      gap: "large",
-                      children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Box2, { inlineSize: "53%", children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { fontWeight: "bold", textOverflow: "ellipsis", children: title }) }),
-                          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { textOverflow: "ellipsis", children: description }) })
-                        ] }),
-                        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "22%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-                          Select2,
-                          {
-                            label: "Status",
-                            name: "status",
-                            defaultValue: initialValues[index] ? "completed" : "todo",
-                            value: completed ? "completed" : "todo",
-                            onChange: (value) => handleChange(id, value),
-                            options: [
-                              { label: "Todo", value: "todo" },
+        children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Form2, { id: `issues-form`, onSubmit, onReset, children: issues.length ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+          paginatedIssues.map(
+            ({ id, title, description, completed }, index) => {
+              return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+                index > 0 && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider2, {}),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { padding: "base small", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+                  InlineStack2,
+                  {
+                    blockAlignment: "center",
+                    inlineSize: "100%",
+                    gap: "large",
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Box2, { inlineSize: "53%", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { fontWeight: "bold", textOverflow: "ellipsis", children: title }) }),
+                        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { textOverflow: "ellipsis", children: description }) })
+                      ] }),
+                      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "22%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                        Select2,
+                        {
+                          label: "Status",
+                          name: "status",
+                          defaultValue: initialValues[index] ? "completed" : "todo",
+                          value: completed ? "completed" : "todo",
+                          onChange: (value) => handleChange(id, value),
+                          options: [
+                            { label: "Todo", value: "todo" },
+                            {
+                              label: "Completed",
+                              value: "completed"
+                            }
+                          ]
+                        }
+                      ) }),
+                      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "25%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+                        InlineStack2,
+                        {
+                          inlineSize: "100%",
+                          blockAlignment: "center",
+                          inlineAlignment: "end",
+                          gap: "base",
+                          children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                              Button2,
                               {
-                                label: "Completed",
-                                value: "completed"
+                                variant: "tertiary",
+                                onPress: () => navigation == null ? void 0 : navigation.navigate(
+                                  `extension:issue-tracker-action?issueId=${id}`
+                                ),
+                                children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "EditMinor" })
                               }
-                            ]
-                          }
-                        ) }),
-                        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { inlineSize: "25%", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(InlineStack2, { inlineSize: "100%", inlineAlignment: "end", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-                          Button2,
-                          {
-                            onPress: () => handleDelete(id),
-                            variant: "tertiary",
-                            children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "DeleteMinor" })
-                          }
-                        ) }) })
-                      ]
-                    }
-                  ) }, id)
-                ] });
-              }
-            ),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
-              InlineStack2,
-              {
-                paddingBlockStart: "large",
-                blockAlignment: "center",
-                inlineAlignment: "center",
-                children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-                    Button2,
-                    {
-                      onPress: () => setCurrentPage((prev) => prev - 1),
-                      disabled: currentPage === 1,
-                      children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "ChevronLeftMinor" })
-                    }
-                  ),
-                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-                    InlineStack2,
-                    {
-                      inlineSize: 25,
-                      blockAlignment: "center",
-                      inlineAlignment: "center",
-                      children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: currentPage })
-                    }
-                  ),
-                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-                    Button2,
-                    {
-                      onPress: () => setCurrentPage((prev) => prev + 1),
-                      disabled: currentPage >= totalPages,
-                      children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "ChevronRightMinor" })
-                    }
-                  )
-                ]
-              }
-            )
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_jsx_runtime4.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { paddingBlockEnd: "large", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { fontWeight: "bold", children: "No issues for this product" }) }) }) })
-        ]
+                            ),
+                            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                              Button2,
+                              {
+                                onPress: () => handleDelete(id),
+                                variant: "tertiary",
+                                children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "DeleteMinor" })
+                              }
+                            )
+                          ]
+                        }
+                      ) })
+                    ]
+                  }
+                ) }, id)
+              ] });
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider2, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { paddingBlockStart: "base", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            Button2,
+            {
+              onPress: () => navigation == null ? void 0 : navigation.navigate(`extension:issue-tracker-action`),
+              children: "Add issue"
+            }
+          ) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+            InlineStack2,
+            {
+              paddingBlockStart: "large",
+              blockAlignment: "center",
+              inlineAlignment: "center",
+              children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                  Button2,
+                  {
+                    onPress: () => setCurrentPage((prev) => prev - 1),
+                    disabled: currentPage === 1,
+                    children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "ChevronLeftMinor" })
+                  }
+                ),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                  InlineStack2,
+                  {
+                    inlineSize: 25,
+                    blockAlignment: "center",
+                    inlineAlignment: "center",
+                    children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: currentPage })
+                  }
+                ),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                  Button2,
+                  {
+                    onPress: () => setCurrentPage((prev) => prev + 1),
+                    disabled: currentPage >= totalPages,
+                    children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Icon2, { name: "ChevronRightMinor" })
+                  }
+                )
+              ]
+            }
+          )
+        ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { paddingBlockEnd: "large", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { fontWeight: "bold", children: "No issues for this product" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            Button2,
+            {
+              onPress: () => navigation == null ? void 0 : navigation.navigate(`extension:issue-tracker-action`),
+              children: "Add your first issue"
+            }
+          )
+        ] }) })
       }
     );
   }

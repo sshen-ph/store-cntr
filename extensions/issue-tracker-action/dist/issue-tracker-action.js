@@ -2496,7 +2496,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment = 7;
+          var Fragment2 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -2636,7 +2636,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment:
+              case Fragment2:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -7054,7 +7054,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment) {
+              if (current2 === null || current2.tag !== Fragment2) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -7457,7 +7457,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment) {
+                    if (child.tag === Fragment2) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -11634,7 +11634,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment:
+              case Fragment2:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -12075,7 +12075,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment:
+              case Fragment2:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -16841,7 +16841,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment, elements, key, mode);
+            var fiber = createFiber(Fragment2, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -18439,8 +18439,8 @@
     }
   });
 
-  // extensions/issue-tracker-action/src/ActionExtension.jsx
-  var import_react13 = __toESM(require_react());
+  // extensions/issue-tracker-action/src/ActionExtension-backend.jsx
+  var import_react17 = __toESM(require_react());
 
   // node_modules/@remote-ui/rpc/build/esm/memory.mjs
   function isBasicObject(value) {
@@ -19143,11 +19143,23 @@
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/AdminAction/AdminAction.mjs
   var AdminAction = createRemoteComponent("AdminAction");
 
-  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/Box/Box.mjs
-  var Box = createRemoteComponent("Box");
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/Banner/Banner.mjs
+  var Banner = createRemoteComponent("Banner");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/BlockStack/BlockStack.mjs
+  var BlockStack = createRemoteComponent("BlockStack");
 
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/Button/Button.mjs
   var Button = createRemoteComponent("Button");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/InlineStack/InlineStack.mjs
+  var InlineStack = createRemoteComponent("InlineStack");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/ProgressIndicator/ProgressIndicator.mjs
+  var ProgressIndicator = createRemoteComponent("ProgressIndicator");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/Text/Text.mjs
+  var Text = createRemoteComponent("Text");
 
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/admin/components/TextArea/TextArea.mjs
   var TextArea = createRemoteComponent("TextArea");
@@ -19457,11 +19469,25 @@
     fragmentProps: ["primaryAction", "secondaryAction"]
   });
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/Box/Box.mjs
-  var Box2 = createRemoteReactComponent(Box);
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/Banner/Banner.mjs
+  var Banner2 = createRemoteReactComponent(Banner, {
+    fragmentProps: ["primaryAction", "secondaryAction"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/BlockStack/BlockStack.mjs
+  var BlockStack2 = createRemoteReactComponent(BlockStack);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/Button/Button.mjs
   var Button2 = createRemoteReactComponent(Button);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/InlineStack/InlineStack.mjs
+  var InlineStack2 = createRemoteReactComponent(InlineStack);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/ProgressIndicator/ProgressIndicator.mjs
+  var ProgressIndicator2 = createRemoteReactComponent(ProgressIndicator);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/Text/Text.mjs
+  var Text2 = createRemoteReactComponent(Text);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/components/TextArea/TextArea.mjs
   var TextArea2 = createRemoteReactComponent(TextArea);
@@ -19470,7 +19496,7 @@
   var TextField2 = createRemoteReactComponent(TextField);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/hooks/api.mjs
-  var import_react12 = __toESM(require_react(), 1);
+  var import_react16 = __toESM(require_react(), 1);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/errors.mjs
   var AdminUIExtensionError = class extends Error {
@@ -19482,7 +19508,7 @@
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/admin/hooks/api.mjs
   function useApi(_target) {
-    const api = (0, import_react12.useContext)(ExtensionApiContext);
+    const api = (0, import_react16.useContext)(ExtensionApiContext);
     if (api == null) {
       throw new AdminUIExtensionError("No extension api found.");
     }
@@ -19556,7 +19582,7 @@
     });
   }
 
-  // extensions/issue-tracker-action/src/ActionExtension.jsx
+  // extensions/issue-tracker-action/src/ActionExtension-backend.jsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   function generateId(allIssues) {
     return !(allIssues == null ? void 0 : allIssues.length) ? 0 : allIssues[allIssues.length - 1].id + 1;
@@ -19571,58 +19597,116 @@
     };
   }
   var TARGET = "admin.product-details.action.render";
-  var ActionExtension_default = reactExtension(TARGET, () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
+  var ActionExtension_backend_default = reactExtension(TARGET, () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
   function App() {
-    const { close, data } = useApi(TARGET);
-    const [issue, setIssue] = (0, import_react13.useState)({ title: "", description: "" });
-    const [allIssues, setAllIssues] = (0, import_react13.useState)([]);
-    const [formErrors, setFormErrors] = (0, import_react13.useState)(null);
-    const { title, description } = issue;
-    (0, import_react13.useEffect)(() => {
-      getIssues(data.selected[0].id).then((issues) => setAllIssues(issues || []));
+    var _a, _b;
+    const { close, data, intents } = useApi(TARGET);
+    const issueId = (intents == null ? void 0 : intents.launchUrl) ? (_b = (_a = new URL(intents == null ? void 0 : intents.launchUrl)) == null ? void 0 : _a.searchParams) == null ? void 0 : _b.get("issueId") : null;
+    const [loadingInfo, setLoadingInfo] = (0, import_react17.useState)(issueId ? true : false);
+    const [loadingRecommended, setLoadingRecommended] = (0, import_react17.useState)(false);
+    const [issue, setIssue] = (0, import_react17.useState)({ title: "", description: "" });
+    const [allIssues, setAllIssues] = (0, import_react17.useState)([]);
+    const [formErrors, setFormErrors] = (0, import_react17.useState)(null);
+    const [isEditing, setIsEditing] = (0, import_react17.useState)(false);
+    (0, import_react17.useEffect)(() => {
+      getIssues(data.selected[0].id).then((issues) => {
+        setLoadingInfo(false);
+        setAllIssues(issues || []);
+      });
     }, []);
-    const onSubmit = (0, import_react13.useCallback)(() => __async(this, null, function* () {
+    const getIssueRecommendation = (0, import_react17.useCallback)(() => __async(this, null, function* () {
+      setLoadingRecommended(true);
+      const res = yield fetch(
+        `api/recommendedProductIssue?productId=${data.selected[0].id}`
+      );
+      setLoadingRecommended(false);
+      if (!res.ok) {
+        console.error("Network error");
+      }
+      const json = yield res.json();
+      if (json == null ? void 0 : json.productIssue) {
+        setIssue(json == null ? void 0 : json.productIssue);
+      }
+    }), [data.selected]);
+    const onSubmit = (0, import_react17.useCallback)(() => __async(this, null, function* () {
       const { isValid, errors } = validateForm(issue);
       setFormErrors(errors);
       if (isValid) {
-        yield updateIssues(data.selected[0].id, [
-          ...allIssues,
-          __spreadValues({
+        const newIssues = [...allIssues];
+        if (isEditing) {
+          const editingIssueIndex = newIssues.findIndex(
+            (listIssue) => listIssue.id == issue.id
+          );
+          newIssues[editingIssueIndex] = __spreadProps(__spreadValues({}, issue), {
+            title: issue.title,
+            description: issue.description
+          });
+        } else {
+          newIssues.push({
             id: generateId(allIssues),
+            title: issue.title,
+            description: issue.description,
             completed: false
-          }, issue)
-        ]);
+          });
+        }
+        yield updateIssues(data.selected[0].id, newIssues);
         close();
       }
-    }), [issue, data.selected, allIssues, close]);
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+    }), [allIssues, close, data.selected, isEditing, issue]);
+    (0, import_react17.useEffect)(() => {
+      if (issueId) {
+        const editingIssue = allIssues.find(({ id }) => `${id}` === issueId);
+        if (editingIssue) {
+          setIssue(editingIssue);
+          setIsEditing(true);
+        }
+      } else {
+        setIsEditing(false);
+      }
+    }, [issueId, allIssues]);
+    if (loadingInfo) {
+      return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_jsx_runtime4.Fragment, {});
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       AdminAction2,
       {
-        title: "Create an issue",
-        primaryAction: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button2, { onPress: onSubmit, children: "Create" }),
+        title: isEditing ? "Edit your issue" : "Create an issue",
+        primaryAction: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button2, { onPress: onSubmit, children: isEditing ? "Save" : "Create" }),
         secondaryAction: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button2, { onPress: close, children: "Cancel" }),
-        children: [
+        children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { gap: "base", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Banner2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { gap: "base", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: "Automatically fill the issue based on past customer feedback" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineStack2, { blockAlignment: "center", gap: "base", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                Button2,
+                {
+                  onPress: getIssueRecommendation,
+                  disabled: loadingRecommended,
+                  children: "Generate issue"
+                }
+              ),
+              loadingRecommended && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ProgressIndicator2, { size: "small-100" })
+            ] })
+          ] }) }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
             TextField2,
             {
-              value: title,
+              value: issue.title,
               error: (formErrors == null ? void 0 : formErrors.title) ? "Please enter a title" : void 0,
               onChange: (val) => setIssue((prev) => __spreadProps(__spreadValues({}, prev), { title: val })),
-              label: "Title",
-              maxLength: 50
+              label: "Title"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Box2, { paddingBlockStart: "large", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
             TextArea2,
             {
-              value: description,
+              value: issue.description,
               error: (formErrors == null ? void 0 : formErrors.description) ? "Please enter a description" : void 0,
               onChange: (val) => setIssue((prev) => __spreadProps(__spreadValues({}, prev), { description: val })),
-              label: "Description",
-              maxLength: 300
+              label: "Description"
             }
-          ) })
-        ]
+          )
+        ] })
       }
     );
   }
