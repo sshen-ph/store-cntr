@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "6174ed62bf03abba97aab90d2d4fdab4"
-name = "store-cntr"
+name = "Store Connector"
 handle = "store-cntr"
 application_url = "https://admissions-mas-modify-canadian.trycloudflare.com"
 embedded = true
