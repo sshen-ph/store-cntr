@@ -79,7 +79,7 @@ const QRTableRow = ({ qrCode }) => (
       />
     </IndexTable.Cell>
     <IndexTable.Cell>
-      <Link to={`qrcodes/${qrCode.id}`}>{truncate(qrCode.title)}</Link>
+      <Link to={`${qrCode.id}`}>{truncate(qrCode.title)}</Link>
     </IndexTable.Cell>
     <IndexTable.Cell>
       {qrCode.productDeleted ? (
