@@ -7,8 +7,7 @@ application_url = "https://store-cntr.onrender.com"
 embedded = true
 
 [build]
-automatically_update_urls_on_dev = true
-dev_store_url = "plowhearth-dev.myshopify.com"
+automatically_update_urls_on_dev = false
 include_config_on_deploy = true
 
 [access_scopes]
