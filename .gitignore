@@ -12,3 +12,4 @@ database.sqlite
 
 .env
 shopify.app.development.toml
+.env.development
